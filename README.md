@@ -9,3 +9,11 @@ This session was presented at the **Panel Quarto Showcase** at the UC [Love Data
 
 ### Related Resources
 - **Website**: [Quarto Showcase at UC Love Data Week](https://ucsb-library-research-data-services.github.io/ucldw25-quarto-showcase)
+
+  If you have comments or feedback, please use the issues repository feature
+
+Author:
+Renata Curty (rcurty@ucsb.edu)
+
+Creative Commons License
+This work is licensed under a Creative Commons Attribution 4.0 International License
