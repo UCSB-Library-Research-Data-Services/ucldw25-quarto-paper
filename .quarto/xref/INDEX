@@ -1,0 +1,21 @@
+{
+  "test.qmd": {
+    "test.html": "75238b07"
+  },
+  "cat-fetching.qmd": {
+    "cat-fetching.html": "8706145e"
+  },
+  "paper.qmd": {
+    "paper.html": "09f38e45"
+  },
+  "desktop/desktop.qmd": {
+    "desktop.tex": "2f965d78"
+  },
+  "quarto_paper.qmd": {
+    "quarto_paper.html": "5f4f4770"
+  },
+  "cat-fetching-behavior.qmd": {
+    "cat-fetching-behavior.html": "0e2da2d6",
+    "cat-fetching-behavior.tex": "3c64dd50"
+  }
+}

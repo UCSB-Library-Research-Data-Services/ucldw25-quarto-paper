@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Kat Whiskerstein">
+
+<title>Wanna Play? A study on cats’ fetching behaviors</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="cat-fetching-behavior_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cat-fetching-behavior_files/libs/quarto-html/quarto.js"></script>
+<script src="cat-fetching-behavior_files/libs/quarto-html/popper.min.js"></script>
+<script src="cat-fetching-behavior_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cat-fetching-behavior_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cat-fetching-behavior_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cat-fetching-behavior_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cat-fetching-behavior_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cat-fetching-behavior_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cat-fetching-behavior_files/libs/bootstrap/bootstrap-973236bd072d72a04ee9cd82dcc9cb29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Wanna Play? A study on cats’ fetching behaviors</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kat Whiskerstein </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>“Fetching” refers to the act of retrieving an object, often thrown by a pet guardian. This activity is a common form of social bonding and play between dog parents and their pets. <span class="citation" data-cites="grigg2019">(<a href="#ref-grigg2019" role="doc-biblioref">Grigg &amp; Kogan, 2019</a>)</span></p>
+<p>Despite cats being often perceived as aloof and independent creatures, have long been overshadowed by their canine counterparts when it comes to interactive play behaviors such as fetching. However, recent research has shed new light on the prevalence and characteristics of fetching behavior in domestic cats (<em>Felis catus</em>), challenging long-held stereotypes and revealing a more complex picture of feline-human interactions <span class="citation" data-cites="delgado2024">(<a href="#ref-delgado2024" role="doc-biblioref">Delgado et al., 2024</a>)</span>.</p>
+<p>Fetching, a behavior traditionally associated with dogs, has been observed in a significant proportion of cats. A comprehensive study conducted by researchers at Purdue University and the University of Pennsylvania found that 40.9% of cats engage in fetching behavior, a figure much higher than previously thought <span class="citation" data-cites="forman2023">(<a href="#ref-forman2023" role="doc-biblioref">Forman et al., 2023a</a>)</span>. This discovery not only highlights the diversity of cat behavior but also raises intriguing questions about the origins and functions of this behavior in felines.</p>
+<p>The act of fetching in cats appears to be rooted in their innate hunting instincts, serving as a form of play that mimics aspects of predatory behavior4. Unlike dogs, where fetching is often a trained behavior, cats typically initiate fetching spontaneously, with 94.4% of fetching cats offering the behavior without specific training <span class="citation" data-cites="delgado2024">(<a href="#ref-delgado2024" role="doc-biblioref">Delgado et al., 2024</a>)</span>. This spontaneity suggests that fetching may serve as a natural form of social engagement between cats and their human companions.</p>
+<p>There is limited research exploring why or how cats engage in fetching behavior. One anecdotal description highlights a process where a guardian throws an object for the cat to chase, but the cat waits for the guardian to retrieve it and follows them when called. Eventually, the cat may return the object to the original spot, though this doesn’t always happen, and the activity often loses its appeal, both for the cat and the guardian. Surveys from cat parents have indicated that fetching is more common than other behaviors like coming when called or playing games. In one qualitative study, a guardian mentioned their cat’s “obsession” with fetching, noting that the cat would drop toys on their face during the night. Despite its rarity, fetching has been reported as a play activity in surveys on cat-human interaction. However, it is unclear from existing literature whether cat fetching is a trained behavior or occurs spontaneously. Some suggest that fetching in cats may require training, built on the foundation of instinctual behaviors <span class="citation" data-cites="forman2023a">(<a href="#ref-forman2023a" role="doc-biblioref">Forman et al., 2023b</a>)</span>.</p>
+<p>Furthermore, the prevalence of fetching behavior in cats varies based on several factors, including age, sex, breed, and living environment. Understanding these variables can provide valuable insights into feline cognition, social behavior, and the evolutionary adaptations that have shaped the domestic cat’s relationship with humans.</p>
+<p>This paper aims to explore the current understanding of fetching behavior in domestic cats, examining its prevalence, characteristics, and potential implications for cat-human relationships. By delving into this understudied aspect of feline behavior, we hope to contribute to a more nuanced understanding of cat cognition and social capabilities, ultimately enhancing our appreciation for these complex and often misunderstood companions.</p>
+</section>
+<section id="literature-review" class="level2">
+<h2 class="anchored" data-anchor-id="literature-review">Literature Review</h2>
+<p>Recent studies have shed new light on the prevalence and characteristics of fetching behavior in domestic cats, challenging long-held stereotypes about feline-human interactions. A comprehensive study published in September 2024 by researchers from Purdue University and the University of Pennsylvania found that 40.9% of cats engage in fetching behavior, a figure much higher than previously thought. This finding is particularly significant when compared to dogs, of which 77.8% were reported to fetch <span class="citation" data-cites="delgado2024">(<a href="#ref-delgado2024" role="doc-biblioref">Delgado et al., 2024</a>)</span>.The study, which surveyed 8,224 cat owners and 73,724 dog owners, revealed several factors influencing fetching behavior in cats:</p>
+<ul>
+<li><p>Age and sex: Younger male cats were more likely to fetch.</p></li>
+<li><p>Living environment: Indoor cats showed a higher propensity for fetching compared to outdoor cats.</p></li>
+<li><p>Breed: Siamese, Burmese, and Tonkinese cats were most likely to exhibit fetching behavior.</p></li>
+<li><p>Health: Healthier animals were more inclined to fetch.</p></li>
+</ul>
+<p><span class="citation" data-cites="biasi2024">Biasi (<a href="#ref-biasi2024" role="doc-biblioref">2024</a>)</span> determined the cat-human interaction from the viewpoint of classical mechanics theories and concepts. Beyond being an enjoyable model to exemplify physics, findings such as can be used to better understand cats fetching habits as well, including his considerations on Newton’s mechanics in the presence of an external potential, which can be applied as <span class="math inline">\(V_{cat}^{(𝛿)}\)</span>, as illustrated in <a href="#fig-physics" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div id="fig-physics" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-physics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/cat-physics.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-physics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Interpretation of the cat–human interaction potential. In (a), the cat is attached to the person, while in (b) the person is a complete stranger to the cat. In both cases, the cat is illustrated at rest at three equilibrium points.
+</figcaption>
+</figure>
+</div>
+<p>Previous research have also suggested a few main themes associated with feline fetching habits. <span class="citation" data-cites="forman2023">Forman et al. (<a href="#ref-forman2023" role="doc-biblioref">2023a</a>)</span> presents a concept map (<a href="#fig-concept" class="quarto-xref">Figure&nbsp;2</a>) which illustrates the relationship and branching of sub-themes associated with the fetching process itself, the acquisition or retrieval process, and the conditions in which the fetching session happens.</p>
+<div id="fig-concept" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-concept-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/cat-fetching-themes.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-concept-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Thematic map illustrating key themes associated with feline fetching habits.
+</figcaption>
+</figure>
+</div>
+<p>The literature suggests that fetching in cats may be an instinctive behavior rather than a learned one. Furthermore, cats were found to largely determine when they engage in fetching sessions, demonstrating independent agency in the onset and maintenance of this behavior. These findings provide valuable insights into the cognitive and social capabilities of domestic cats, challenging the perception of cats as aloof or independent creatures.This body of research not only expands our understanding of feline behavior but also highlights the complex nature of cat-human interactions, suggesting that cats may be more socially engaged with their guardians than previously believed.</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p><strong>Study Design</strong></p>
+<p>A survey was distributed to 822 cat parents in the region to better understand the frequency, conditions, and factors influencing their cats’ tendency to fetch<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The survey was designed to capture a broad range of data on various aspects of feline fetching behavior, from the cat’s age and breed to the frequency of play and engagement in fetching activities.</p>
+<p>The survey was distributed online via social media channels and local community forums, ensuring accessibility for a diverse sample of participants. All respondents were required to be adult cat owners, and there were no restrictions based on the breed or age of the cats owned.</p>
+<p><strong>Survey Variables</strong></p>
+<p>The survey included a variety of variables related to both the cats’ behavior and the guardians’ experiences. The key variables that were recorded in the survey included:</p>
+<ol type="1">
+<li><p><strong>Cat’s Age</strong>: The age of the cat (categorized into young, adult, or senior).</p></li>
+<li><p><strong>Breed</strong>: The breed of the cat, with particular interest in breeds commonly associated with fetching behavior (e.g., Maine Coon, Bengal).</p></li>
+<li><p><strong>Fetching Frequency</strong>: The frequency with which the cat engages in fetching (e.g., never, occasionally, frequently).</p></li>
+<li><p><strong>Play Duration</strong>: The typical duration of playtime for the cat in a single session.</p></li>
+<li><p><strong>Fetch Motivation</strong>: The types of objects used for fetching (e.g., balls, toys, sticks).</p></li>
+<li><p><strong>Owner’s Interaction</strong>: The level of interaction or training by the owner to encourage or discourage fetching behavior.</p></li>
+<li><p><strong>Cat’s Health and Activity Level</strong>: Whether the cat has any health issues and their general activity level (e.g., low, moderate, high).</p></li>
+<li><p><strong>Environmental Factors</strong>: Whether the cat has access to outdoor play or is an indoor-only cat.</p></li>
+</ol>
+<p><strong>Data Collection &amp; Analysis</strong></p>
+<p>The survey was administered online over a period of two months. All responses were anonymous, and participants were given an informed consent form outlining the purpose of the survey, the voluntary nature of participation, and confidentiality assurances. Cat parents were asked to answer one survey per cat in their household. The data collected from the survey responses were compiled into a dataset for analysis. The collected data were analyzed using RStudio in order to allow for better transparency and reproducibility.</p>
+<p><strong>Ethical Considerations</strong></p>
+<p>The study was conducted in accordance with ethical guidelines for research with human participants. Informed consent was obtained from all participants, and the study ensured the anonymity and confidentiality of all responses. Additionally, no personal or sensitive information was requested from the respondents.</p>
+</section>
+<section id="discussion-of-findings" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-of-findings">Discussion of Findings</h2>
+<p>Our sample included cats from 822 unique pet parents, indicating an average of 1.9 cats per respondent, with a maximum of 5. Out of a total of 1543 cases, 790 were males (51.2%), while 753 females (48.8%) account for the second-largest group. The average age of the cats included on the dataset was 6.4.</p>
+<p>Out of a total of 1543 cases, the largest category is Healthy with 26.4% of the cases. Following that, overweight/obese accounts for 25.2%, while chronic illness and minor illness make up 25.0% and 23.5% respectively.</p>
+<p>We also identified little variability across breeds in the average time spent per week playing fetch with their owners, with all breeds being very active in fetching activities with at least 10 hours a week.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cat-fetching-behavior_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Fetching average time per breed.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We also compared the average time spend between males and females considering their preferred toys.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cat-fetching-behavior_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Average time spent per week by preferred toy and sex.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="level2 unnumbered">
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-biasi2024" class="csl-entry" role="listitem">
+Biasi, A. (2024). On cat<span></span>human interaction from the viewpoint of physics: An equation of motion. <em>American Journal of Physics</em>, <em>92</em>(11), 827–833. <a href="https://doi.org/10.1119/5.0158200">https://doi.org/10.1119/5.0158200</a>
+</div>
+<div id="ref-delgado2024" class="csl-entry" role="listitem">
+Delgado, M. M., Stella, J. L., Croney, C. C., &amp; Serpell, J. A. (2024). Making fetch happen: Prevalence and characteristics of fetching behavior in owned domestic cats (Felis catus) and dogs (Canis familiaris). <em>PLOS ONE</em>, <em>19</em>(9), e0309068. <a href="https://doi.org/10.1371/journal.pone.0309068">https://doi.org/10.1371/journal.pone.0309068</a>
+</div>
+<div id="ref-forman2023" class="csl-entry" role="listitem">
+Forman, J., Renner, E., &amp; Leavens, D. A. (2023a). Fetching felines: a survey of cat owners on the diversity of cat (Felis catus) fetching behaviour. <em>Scientific Reports</em>, <em>13</em>(1). <a href="https://doi.org/10.1038/s41598-023-47409-w">https://doi.org/10.1038/s41598-023-47409-w</a>
+</div>
+<div id="ref-forman2023a" class="csl-entry" role="listitem">
+Forman, J., Renner, E., &amp; Leavens, D. A. (2023b). Fetching felines: a survey of cat owners on the diversity of cat (Felis catus) fetching behaviour. <em>Scientific Reports</em>, <em>13</em>(1). <a href="https://doi.org/10.1038/s41598-023-47409-w">https://doi.org/10.1038/s41598-023-47409-w</a>
+</div>
+<div id="ref-grigg2019" class="csl-entry" role="listitem">
+Grigg, E. K., &amp; Kogan, L. R. (2019). Owners<span>’</span> Attitudes, Knowledge, and Care Practices: Exploring the Implications for Domestic Cat Behavior and Welfare in the Home. <em>Animals</em>, <em>9</em>(11), 978. <a href="https://doi.org/10.3390/ani9110978">https://doi.org/10.3390/ani9110978</a>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This paper is a fictional work created solely for instructional purposes and is not based on actual research. While it may reference ongoing research in the field, all content within this document, including the underlying dataset, is fabricated and based on synthetic data. The primary objective of this paper is to demonstrate how <a href="https://quarto.org/docs/get-started/hello/rstudio.html">RStudio and Quarto</a> can be used effectively to streamline and enhance reproducible scientific writing. This paper is intended as a learning tool for understanding the integration of these platforms in the context of research workflows. Please do not use or cite this paper.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
